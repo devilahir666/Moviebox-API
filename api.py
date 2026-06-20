@@ -26,11 +26,14 @@ HEADERS = {
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/122.0.0.0 Safari/537.36"
     ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept": "application/json, text/plain, */*", # Yeh change kiya hai
+    "Content-Type": "application/json",            # Yeh sabse important hai bhai
     "Accept-Language": "en-US,en;q=0.9",
     "Connection": "keep-alive",
     "Referer": "https://moviebox.ph/",
+    "Origin": "https://moviebox.ph"               # Yeh add kar de, bahut si APIs check karti hain
 }
+
 
 async def fetch_page() -> tuple[BeautifulSoup, str]:
     return await fetch_tab("/")
